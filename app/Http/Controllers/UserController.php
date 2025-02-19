@@ -48,7 +48,7 @@ class UserController extends Controller
         //   if not found, create a user with $name, $email and random password
        
         $user = User::updateOrCreate([
-                                     'name'=>name
+                                     'name'=>$name
         ],[
                                      'email'=>$email,
                                      'password'=>Hash::make('random_password')
