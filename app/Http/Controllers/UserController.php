@@ -54,7 +54,7 @@ class UserController extends Controller
                           'email'=>$email
             ]);
         }else{
-            User::create([
+            $user=User::create([
                                'name'=>$name,
                                'email'=>$email,
                                'password'=>Hash::make('random_password')
