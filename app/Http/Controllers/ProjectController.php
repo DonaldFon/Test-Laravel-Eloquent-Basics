@@ -17,7 +17,7 @@ class ProjectController extends Controller
 
         $project=new Project();
         $project->name=$request->name;
-        $project->save()
+        $project->save();
 
         return redirect('/')->with('success', 'Project created');
     }
