@@ -42,7 +42,7 @@ class UserController extends Controller
         // TASK: find a user by $name and update it with $email
         //   if not found, create a user with $name, $email and random password
         // $user = User::updateOrCreate(['name'=>$name],['email'=>$email,'password'=>Hash::make('random_password')]); // updated or created user
-        $user=User::where('name'=>$name)->first();
+        $user=User::where('name',$name)->first();
         if($user){
             $user->update(['email'=>email]);
         }else{
