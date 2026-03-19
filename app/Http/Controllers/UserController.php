@@ -46,7 +46,7 @@ class UserController extends Controller
         if($user){
             $user->update(['email'=>email]);
         }else{
-            User::create(['name'=>$name,'email'=>$email,'password'=>Hash::make('random_password')]);
+            $user=User::create(['name'=>$name,'email'=>$email,'password'=>Hash::make('random_password')]);
         }
         return view('users.show', compact('user'));
     }
