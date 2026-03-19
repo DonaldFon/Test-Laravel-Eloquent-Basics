@@ -44,7 +44,7 @@ class UserController extends Controller
         // $user = User::updateOrCreate(['name'=>$name],['email'=>$email,'password'=>Hash::make('random_password')]); // updated or created user
         $user=User::where('name'=>$name)->first();
         if($user){
-            $user->update(['email'=>email]);
+            $user->update(['email'=$>email]);
         }else{
             User::create(['name'=>$name,'email'=>$email,'password'=>Hash::make('random_password')]);
         }
